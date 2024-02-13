@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Day</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: yellow;
+      background-image: url('sunflower_pattern.png'); /* Sunflower pattern image */
+      background-repeat: repeat; /* Repeat the pattern both horizontally and vertically */
+    }
+    h1 {
+      font-size: 36px; /* increased font size for h1 */
+    }
+    #password-page {
+      display: block;
+    }
+    #valentine-page {
+      display: none;
+    }
+    .btn {
+      padding: 10px 20px;
+      font-size: 24px; /* increased font size for buttons */
+      cursor: pointer;
+      transition: all 0.3s ease; /* added transition for smooth size change */
+    }
+    #yes-btn {
+      background-color: #ff6699;
+    }
+    #no-btn {
+      background-color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div id="password-page">
+    <h1>For Gianna</h1>
+    <input type="password" id="password" placeholder="Enter password">
+  </div>
+  
+  <div id="valentine-page">
+    <h1>Would you want to be my valentine?</h1>
+    <img src="https://media.giphy.com/media/knY3fnN7KPySvGVSVp/giphy.gif" alt="Cute bear">
+    <br><br>
+    <button id="yes-btn" class="btn">Yes</button>
+    <button id="no-btn" class="btn">No</button>
+  </div>
+
+  <div id="love-page" style="display:none;">
+    <h1>I LOVE YOU</h1>
+    <p>My dearest Pookapie,</p>
+    <p>I love you so much my little baby. You make me so happy and I am so proud of the person you are, and that I am lucky enough to call you my baby.Thank you for being my forever valentine.</p>
+    <p>With all my love,</p>
+    <p>Your Heart</p>
+    <img src="gianna123.jpg" alt="Picture of Gianna">
+    <br><br>
+    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOG0wM3EyNG5rc2E3dHR2bWcwYmVjdGE0bWZyMGd3bHFwbDljMTg0dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vc5L6VoTB6tnW/giphy.gif" alt="Hearts">
+  </div>
+
+  <script>
+    document.getElementById("password").addEventListener("keyup", function(event) {
+      if (event.key === "Enter") {
+        var password = document.getElementById("password").value;
+        if (password === "2522") {
+          document.getElementById("password-page").style.display = "none";
+          document.getElementById("valentine-page").style.display = "block";
+        } else {
+          alert("Hint! It's our anniversary m/d/y!");
+        }
+      }
+    });
+
+    document.getElementById("yes-btn").addEventListener("click", function() {
+      document.getElementById("valentine-page").style.display = "none";
+      document.getElementById("love-page").style.display = "block";
+    });
+
+    document.getElementById("no-btn").addEventListener("click", function() {
+      var noButton = document.getElementById("no-btn");
+      var yesButton = document.getElementById("yes-btn");
+      
+      noButton.style.fontSize = (parseInt(getComputedStyle(noButton).fontSize) - 2) + "px";
+      yesButton.style.fontSize = (parseInt(getComputedStyle(yesButton).fontSize) + 2) + "px";
+    });
+  </script>
+</body>
+</html>
